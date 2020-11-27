@@ -42,13 +42,18 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">Connexion</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">Inscription professionnel</a>
+                                </li>
+                            @endif
+                            @if (Route::has('register-professional'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">Inscription particulier</a>
                                 </li>
                             @endif
                         @else

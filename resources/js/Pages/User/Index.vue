@@ -1,56 +1,32 @@
 <template>
   <div>
+    <side-bar-user></side-bar-user>
     <div class="container">
       <div class="row">
-        <div class="col-md-10 offset-1 mt-5">
-          <br /><br />
-          <h1 class="text-center">Poster une annonce</h1>
+        <div class="col-md-8 offset-4" style="margin-top: -23em">
           <form @submit.prevent="handleSubmit">
-            <div class="form-group mt-5">
+            <div class="form-group">
               <label for="type">categorie</label>
-              <select
-                v-model="form.category"
-                class="custom-select"
-                label="Catégorie"
-              >
+              <select v-model="form.category" class="custom-select" label="Catégorie" required>
                 <option value="telephone">Telephone</option>
                 <option value="ordinateur">Ordinateur</option>
+                <option value="electromenager">electromenager</option>
+                <option value="chemise">chemise</option>
+                <option value="t-shirt">t-shirt</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="lastName">Nom du produit : </label>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Nom du produit"
-                v-model="form.productName"
-                required
-              />
+              <input type="text" class="form-control" placeholder="Nom du produit" v-model="form.productName" required />
             </div>
             <div class="form-group">
               <file-input v-model="form.image" label="image *" />
-            </div>
-            <div class="form-group">
               <file-input v-model="form.image1" label="image *" />
-            </div>
-            <div class="form-group">
               <file-input v-model="form.image2" label="image *" />
             </div>
             <div class="form-group">
-              <label for="description">Description</label>
-              <textarea
-                class="form-control col-md-12"
-                rows="5"
-                v-model="form.description"
-                required
-              ></textarea>
+              <textarea class="form-control col-md-12" rows="5" v-model="form.description" required placeholder="description du produit"></textarea>
             </div>
-            <button
-              type="submit"
-              class="btn btn-round btn-outline-primary col-md-5 offset-4"
-            >
-              Submit
-            </button>
+            <button type="submit" class="btn btn-round btn-outline-primary col-md-5 offset-4">Submit</button>
             <br />
           </form>
         </div>
@@ -62,12 +38,14 @@
 <script>
 import FileInput from "../../Shared/FileInput";
 import TextareaInput from "../../Shared/TextareaInput";
+import SideBarUser from "../../Shared/SideBarUser";
 
 export default {
   name: "Index",
   components: {
     FileInput,
     TextareaInput,
+    SideBarUser,
   },
   data() {
     return {

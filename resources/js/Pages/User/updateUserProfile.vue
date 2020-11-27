@@ -1,8 +1,9 @@
 <template>
   <div>
+    <side-bar-user></side-bar-user>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 offset-2">
+        <div class="col-md-8 offset-4" style="margin-top: -29em">
           <br />
           <form @submit.prevent="handleSubmit">
             <div class="form-group mt-5">
@@ -10,46 +11,21 @@
             </div>
             <div class="form-group">
               <label for="lastName">nom : </label>
-              <input
-                type="text"
-                class="form-control"
-                :placeholder="this.personalsProp[0].lastName"
-                v-model="form.lastName"
-              />
+              <input type="text" class="form-control" :placeholder="this.personalsProp[0].lastName" v-model="form.lastName" />
             </div>
             <div class="form-group">
               <label for="prenom">Prenom : </label>
-              <input
-                type="text"
-                class="form-control"
-                :placeholder="this.personalsProp[0].firstName"
-                v-model="form.firstName"
-              />
+              <input type="text" class="form-control" :placeholder="this.personalsProp[0].firstName" v-model="form.firstName" />
             </div>
             <div class="form-group">
               <label for="prenom">Téléphone :</label>
-              <input
-                type="text"
-                class="form-control"
-                :placeholder="this.personalsProp[0].phone"
-                v-model="form.phone"
-              />
+              <input type="text" class="form-control" :placeholder="this.personalsProp[0].phone" v-model="form.phone" />
             </div>
             <div class="form-group">
               <label for="address">Adresse</label>
-              <input
-                type="text"
-                class="form-control"
-                :placeholder="this.personalsProp[0].address"
-                v-model="form.address"
-              />
+              <input type="text" class="form-control" :placeholder="this.personalsProp[0].address" v-model="form.address" />
             </div>
-            <button
-              type="submit"
-              class="btn btn-round btn-outline-primary col-md-5 offset-4"
-            >
-              Soumettre
-            </button>
+            <button type="submit" class="btn btn-round btn-outline-primary col-md-5 offset-4">Soumettre</button>
           </form>
         </div>
       </div>
@@ -58,6 +34,7 @@
 </template>
 
 <script>
+import SideBarUser from "../../Shared/SideBarUser";
 import AppLayout from "../../Shared/AppLayout";
 import FileInput from "../../Shared/FileInput";
 
@@ -66,6 +43,7 @@ export default {
   components: {
     AppLayout,
     FileInput,
+    SideBarUser,
   },
   props: {
     personalsProp: Array,

@@ -4,42 +4,18 @@
       <div class="row mt-5">
         <div v-for="item in advertisements" :key="item.id" class="mt-5">
           <div class="card" style="margin-left: 10rem">
-            <div
-              id="carouselExampleControls"
-              class="card mr-4 carousel slide"
-              data-ride="carousel"
-            >
+            <div id="carouselExampleControls" class="card mr-4 carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img
-                    alt="First slide"
-                    :src="'http://alpha-tests.defarsci.com/samba-store-v2/uploads/' + item.images"
-                    style="width: 50rem; height: 25rem"
-                  />
+                  <img alt="First slide" :src="'http://localhost:8000/uploads/' + item.images" style="width: 50rem; height: 25rem" />
                 </div>
               </div>
-              <a
-                class="carousel-control-prev"
-                href="#carouselExampleControls"
-                role="button"
-                data-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
               </a>
-              <a
-                class="carousel-control-next"
-                href="#carouselExampleControls"
-                role="button"
-                data-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
               </a>
             </div>
@@ -57,13 +33,7 @@
                 </small>
               </p>
               <div class="text-center">
-                <a
-                  href="#"
-                  class="btn btn-info btn-round mb-4"
-                  data-toggle="modal"
-                  data-target="#modalLoginForm"
-                  >Commander</a
-                >
+                <a href="#" class="btn btn-info btn-round mb-4" data-toggle="modal" data-target="#modalLoginForm">Commander</a>
               </div>
             </div>
           </div>
@@ -71,38 +41,19 @@
       </div>
     </div>
     <form @submit.prevent="handleSubmit">
-      <div
-        class="modal fade"
-        id="modalLoginForm"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="myModalLabel"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header text-center">
-              <h4 class="modal-title w-100 font-weight-bold">
-                Laissez un message
-              </h4>
-              <button
-                type="button"
-                class="close"
-                data-dismiss="modal"
-                aria-label="Close"
-              >
+              <h4 class="modal-title w-100 font-weight-bold">Laissez un message</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body mx-3">
               <div class="md-form mb-4">
                 <i class="fas fa-message"></i>
-                <textarea
-                  class="form-control col-md-12"
-                  rows="5"
-                  v-model="form.message"
-                  required
-                ></textarea>
+                <textarea class="form-control col-md-12" rows="5" v-model="form.message" required></textarea>
               </div>
             </div>
             <div class="modal-footer d-flex justify-content-center">

@@ -4,8 +4,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
+          <h1 class="text-center">ADMIN SHOW COMPANy</h1>
+        </div>
+        <div class="col-md-12">
           <br /><br />
           <show-link></show-link>
+        </div>
+        <div class="col-md-12">
           <table class="table table-dark">
             <tr class="m-5">
               <th>ID</th>
@@ -21,11 +26,11 @@
               <td>{{ item.phone }}</td>
               <td></td>
               <td>
-                <inertia-link :href="'http://alpha-tests.defarsci.com/samba-store-v2/user/' + item.user_id">
+                <inertia-link :href="'http://localhost:8000/user/' + item.user_id">
                   <button class="btn btn-info btn-sm">Afficher</button>
                 </inertia-link>
 
-                <inertia-link :href="'http://alpha-tests.defarsci.com/samba-store-v2/companyDelete/' + item.user_id">
+                <inertia-link :href="'http://localhost:8000/companyDelete/' + item.user_id">
                   <button class="btn btn-round btn-danger btn-sm">Supprimer le compte</button>
                 </inertia-link>
               </td>

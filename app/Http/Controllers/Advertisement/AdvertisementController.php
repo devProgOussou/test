@@ -51,9 +51,9 @@ class AdvertisementController extends Controller
             $advertisement->personal_id = Auth::user()->id;
         }
         $advertisement->productName = $request->input('productName');
-        // dd($advertisement->productName);
         $advertisement->description = $request->input('description');
         $advertisement->category = $request->input('category');
+        //  dd($advertisement->category);
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();

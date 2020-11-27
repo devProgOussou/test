@@ -78,55 +78,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -251,9 +202,7 @@ var render = function() {
                           staticStyle: { width: "50rem", height: "25rem" },
                           attrs: {
                             alt: "First slide",
-                            src:
-                              "http://alpha-tests.defarsci.com/samba-store-v2/uploads/" +
-                              item.images
+                            src: "http://localhost:8000/uploads/" + item.images
                           }
                         })
                       ])
@@ -451,7 +400,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "modal-header text-center" }, [
       _c("h4", { staticClass: "modal-title w-100 font-weight-bold" }, [
-        _vm._v("\n              Laissez un message\n            ")
+        _vm._v("Laissez un message")
       ]),
       _vm._v(" "),
       _c(

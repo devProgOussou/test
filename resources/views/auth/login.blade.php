@@ -1,73 +1,86 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <link rel="stylesheet" href="/css/formCSS.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://anshulgupta.in/images/designersnest.png" alt="designersnest">
+        </div>
+        <div class="w40">
+            <div class="signInBox active">
+                <div class="text">
+                    <h3>Heureux de vous revoir</h3>
+                    <p>Entrer les informations demander et passer la journee avec nous!</p>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                <p style="margin-top:1rem">Vous n'avez pas encore un compte ? <br><a href="{{ route('register') }}">Inscrivez-vous</a></p>
+                <br>
                 </div>
+            </div>
+            <div class="signOutBox">
+                <div class="text">
+                    <h3>Heureux de vous revoir</h3>
+                    <p>Entrer les informations demander et passer la journee avec nous!</p>
+
+                <p style="margin-top:1rem">Vous n'avez pas encore un compte ? <br><a href="{{ route('register') }}">Inscrivez-vous</a></p>
+                </div>
+            </div>
+            </div>
+            <div class="w60">
+                <div class="new-account-section">
+                    <h3 style="color: #008080">Connectez vous</h3>
+                    <form method="post" action="{{ route('login') }}">
+                        @csrf
+                        @method('post')
+
+                        <input type="text" id="email" required name="email" placeholder="email">
+                        <label for="email" class="lemail"></label>
+
+                        <input type="password" name="password" required id="password" placeholder="Mot de passe">
+                        <label for="password" class="lpass"></label>
+
+                    <button class="btn green-btn">Connexion</button>
+                </form>
             </div>
         </div>
     </div>
-</div>
-@endsection
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+      <script>
+          $(function() {
+        $(".sign-in-btn").click(function() {
+        $(".w40").addClass("active");
+        $(".sign-in-btn").addClass("active");
+        $(".sign-up-btn").removeClass("active");
+        $(".signInBox").removeClass("active");
+        $(".signOutBox").addClass("active");
+        $(".w40").removeClass("shift-left");
+        $(".w60").removeClass("shift-right");
+        $(".w60").addClass("active");
+        $(".new-account-section").addClass("active");
+        $(".sign-in-section").addClass("active");
+    });
+});
+$(function() {
+        $(".sign-up-btn").click(function() {
+        $(".sign-in-btn").removeClass("active");
+        $(".sign-up-btn").addClass("active");
+        $(".w40").removeClass("active");
+        $(".w40").addClass("shift-left");
+        $(".signInBox").addClass("active");
+        $(".signOutBox").removeClass("active");
+        $(".w60").removeClass("active");
+        $(".w60").addClass("shift-right");
+        $(".new-account-section").removeClass("active");
+        $(".sign-in-section").removeClass("active");
+    });
+});
+
+    </script>
+</body>
+</html>

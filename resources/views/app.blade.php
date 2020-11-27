@@ -17,7 +17,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('/css/app.css') }}" rel="stylesheet" /> --}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -27,21 +27,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="{{ mix('/js/app.js') }}" defer></script>
-    <script src="{{ asset('/js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('/js/app.js') }}" defer></script> --}}
   </head>
   <body>
-    <nav class="navbar navbar-expand-xl navbar-dark bg-dark pmd-navbar pmd-z-depth fixed-top">
-        <a class="navbar-brand" href="{{ route('home') }}">Navbar</a>
+    <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #008080">
+        <a class="navbar-brand text-light" href="{{ route('home') }}">SAMBA-STORE</a>
         <div class="dropdown pmd-dropdown pmd-user-info ml-auto">
             @if (Route::has('login'))
-            <a href="#" class="btn-user dropdown-toggle media align-items-center" data-toggle="dropdown" data-sidebar="true" aria-expanded="false">
+            <a href="" style="color:white" class="btn dropdown-toggle media align-items-center" data-toggle="dropdown" data-sidebar="true" aria-expanded="false">
                     @auth
                         @if(Auth::user()->avatar != null)
                             <img class="mr-2 rounded" src='{{ asset("uploads/avatar/".Auth::user()->avatar) }}' width="40" height="40" alt="avatar">
                             <span>{{ Auth::user()->name }}</span>
                         @else
                             <img class="mr-2" src="https://pro.propeller.in/assets/images/avatar-icon-40x40.png" width="40" height="40" alt="avatar" />
-                            <span>{{ Auth::user()->name }}</span>
+                            <span style="color: white">{{ Auth::user()->name }}</span>
                         @endif
                     @else
                         <a style="color:white" class="mr-2" href="{{ route('login') }}">Connexion</a>
@@ -65,7 +65,7 @@
                 <a class="dropdown-item" href="{{ url('/message') }}">
                     Messagerie
                 </a>
-                @if(Auth::check())
+                @if(Auth::check() && Auth::user()->isRegister == true)
                 <a class="dropdown-item" href="{{ url('/updateUserProfile/'.Auth::user()->id) }}">
                     Modifier profil
                 </a>
@@ -91,5 +91,10 @@
     <div>
         @inertia
     </div>
+    <script>
+        setTimeout(() => {
+            console.log("recharger");
+        }, 9000);
+    </script>
   </body>
 </html>

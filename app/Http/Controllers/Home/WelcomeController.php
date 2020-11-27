@@ -53,12 +53,18 @@ class WelcomeController extends Controller
      */
     public function show($id)
     {
-        $sender_id = Auth::user()->id;
-        $advertisements = Advertisement::with('user')->where('id', $id)->get();
-        return Inertia::render('Advertisement/Post',[
+        if(Auth::check())
+        {
+            $sender_id = Auth::user()->id;
+            $advertisements = Advertisement::with('user')->where('id', $id)->get();
+            return Inertia::render('Advertisement/Post',[
             'advertisements' => $advertisements,
             'sender_id' => $sender_id
-        ]);
+            ]);
+        }
+        else {
+            return redirect()->route('login');
+        }
     }
 
     /**

@@ -50693,19 +50693,21 @@ module.exports = function(module) {
 var map = {
 	"./Admin/CompanyShow": [
 		"./resources/js/Pages/Admin/CompanyShow.vue",
-		7
+		6
 	],
 	"./Admin/CompanyShow.vue": [
 		"./resources/js/Pages/Admin/CompanyShow.vue",
-		7
+		6
 	],
 	"./Admin/Index": [
 		"./resources/js/Pages/Admin/Index.vue",
-		1
+		0,
+		11
 	],
 	"./Admin/Index.vue": [
 		"./resources/js/Pages/Admin/Index.vue",
-		1
+		0,
+		11
 	],
 	"./Admin/PersonalShow": [
 		"./resources/js/Pages/Admin/PersonalShow.vue",
@@ -50717,19 +50719,19 @@ var map = {
 	],
 	"./Admin/User": [
 		"./resources/js/Pages/Admin/User.vue",
-		3
+		7
 	],
 	"./Admin/User.vue": [
 		"./resources/js/Pages/Admin/User.vue",
-		3
+		7
 	],
 	"./Admin/UserDeactivated": [
 		"./resources/js/Pages/Admin/UserDeactivated.vue",
-		14
+		17
 	],
 	"./Admin/UserDeactivated.vue": [
 		"./resources/js/Pages/Admin/UserDeactivated.vue",
-		14
+		17
 	],
 	"./Admin/showCompany": [
 		"./resources/js/Pages/Admin/showCompany.vue",
@@ -50749,11 +50751,11 @@ var map = {
 	],
 	"./Advertisement/Index": [
 		"./resources/js/Pages/Advertisement/Index.vue",
-		15
+		18
 	],
 	"./Advertisement/Index.vue": [
 		"./resources/js/Pages/Advertisement/Index.vue",
-		15
+		18
 	],
 	"./Advertisement/Post": [
 		"./resources/js/Pages/Advertisement/Post.vue",
@@ -50763,85 +50765,131 @@ var map = {
 		"./resources/js/Pages/Advertisement/Post.vue",
 		10
 	],
+	"./User/CompanyRegister": [
+		"./resources/js/Pages/User/CompanyRegister.vue",
+		0,
+		1,
+		21
+	],
+	"./User/CompanyRegister.vue": [
+		"./resources/js/Pages/User/CompanyRegister.vue",
+		0,
+		1,
+		21
+	],
 	"./User/Dashboard": [
 		"./resources/js/Pages/User/Dashboard.vue",
-		11
+		0,
+		12
 	],
 	"./User/Dashboard.vue": [
 		"./resources/js/Pages/User/Dashboard.vue",
-		11
+		0,
+		12
 	],
 	"./User/Deactivate": [
 		"./resources/js/Pages/User/Deactivate.vue",
-		16
+		19
 	],
 	"./User/Deactivate.vue": [
 		"./resources/js/Pages/User/Deactivate.vue",
-		16
+		19
 	],
 	"./User/Index": [
 		"./resources/js/Pages/User/Index.vue",
-		4
+		0,
+		1,
+		23
 	],
 	"./User/Index.vue": [
 		"./resources/js/Pages/User/Index.vue",
-		4
+		0,
+		1,
+		23
 	],
 	"./User/Message": [
 		"./resources/js/Pages/User/Message.vue",
-		12
+		0,
+		13
 	],
 	"./User/Message.vue": [
 		"./resources/js/Pages/User/Message.vue",
-		12
+		0,
+		13
 	],
 	"./User/MessageSave": [
 		"./resources/js/Pages/User/MessageSave.vue",
-		17
+		20
 	],
 	"./User/MessageSave.vue": [
 		"./resources/js/Pages/User/MessageSave.vue",
-		17
+		20
+	],
+	"./User/Messagerie": [
+		"./resources/js/Pages/User/Messagerie.vue",
+		0,
+		15
+	],
+	"./User/Messagerie.vue": [
+		"./resources/js/Pages/User/Messagerie.vue",
+		0,
+		15
 	],
 	"./User/Register": [
 		"./resources/js/Pages/User/Register.vue",
-		0
+		0,
+		1,
+		22
 	],
 	"./User/Register.vue": [
 		"./resources/js/Pages/User/Register.vue",
-		0
+		0,
+		1,
+		22
 	],
 	"./User/Show": [
 		"./resources/js/Pages/User/Show.vue",
-		13
+		0,
+		14
 	],
 	"./User/Show.vue": [
 		"./resources/js/Pages/User/Show.vue",
-		13
+		0,
+		14
 	],
 	"./User/displayMessage": [
 		"./resources/js/Pages/User/displayMessage.vue",
-		18
+		0,
+		16
 	],
 	"./User/displayMessage.vue": [
 		"./resources/js/Pages/User/displayMessage.vue",
-		18
+		0,
+		16
 	],
 	"./User/updateCompanyProfile": [
 		"./resources/js/Pages/User/updateCompanyProfile.vue",
-		5
+		0,
+		1,
+		24
 	],
 	"./User/updateCompanyProfile.vue": [
 		"./resources/js/Pages/User/updateCompanyProfile.vue",
-		5
+		0,
+		1,
+		24
 	],
 	"./User/updateUserProfile": [
 		"./resources/js/Pages/User/updateUserProfile.vue",
-		6
+		0,
+		1,
+		25
 	],
 	"./User/updateUserProfile.vue": [
 		"./resources/js/Pages/User/updateUserProfile.vue",
-		6
+		0,
+		1,
+		25
 	]
 };
 function webpackAsyncContext(req) {
@@ -50854,7 +50902,7 @@ function webpackAsyncContext(req) {
 	}
 
 	var ids = map[req], id = ids[0];
-	return __webpack_require__.e(ids[1]).then(function() {
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(function() {
 		return __webpack_require__(id);
 	});
 }

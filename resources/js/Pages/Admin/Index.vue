@@ -1,10 +1,16 @@
 <template>
   <div>
-    <app-layout></app-layout>
+    <side-bar-user></side-bar-user>
     <br />
     <div class="container">
       <div class="row">
-      <show-link></show-link>
+        <div class="col-md-12">
+          <h1 class="text-center">ADMIN HOME</h1>
+        </div>
+        <div class="col-md-12">
+          <br /><br />
+          <show-link></show-link>
+        </div>
         <div class="col-md-12">
           <table class="table table-dark">
             <tr class="m-5">
@@ -27,28 +33,14 @@
                 <inertia-link :href="'user/' + user.id">
                   <button class="btn btn-info btn-sm">Afficher</button>
                 </inertia-link>
-                <inertia-link
-                  :href="'userDeactivate/' + user.id"
-                  v-if="user.isActive == true"
-                >
-                  <button class="btn btn-warning btn-round btn-sm">
-                    Desactiver
-                  </button>
+                <inertia-link :href="'userDeactivate/' + user.id" v-if="user.isActive == true">
+                  <button class="btn btn-warning btn-round btn-sm">Desactiver</button>
                 </inertia-link>
-                <inertia-link
-                  :href="'userActivate/' + user.id"
-                  v-if="user.isActive == false"
-                >
-                  <button class="btn btn-success btn-round btn-sm">
-                    Activer
-                  </button>
+                <inertia-link :href="'userActivate/' + user.id" v-if="user.isActive == false">
+                  <button class="btn btn-success btn-round btn-sm">Activer</button>
                 </inertia-link>
-                <inertia-link
-                  :href="'userDelete/' + user.id"
-                >
-                  <button class="btn btn-round btn-danger btn-sm">
-                    Supprimer
-                  </button>
+                <inertia-link :href="'userDelete/' + user.id">
+                  <button class="btn btn-round btn-danger btn-sm">Supprimer</button>
                 </inertia-link>
               </td>
             </tr>
@@ -60,14 +52,14 @@
 </template>
 
 <script>
-import AppLayout from "../../Shared/AppLayout";
-import ShowLink from '../../Shared/ShowLink'
+import ShowLink from "../../Shared/ShowLink";
+import SideBarUser from "../../Shared/SideBarUser";
 
 export default {
   name: "Admin",
   components: {
-    AppLayout,
-    ShowLink
+    ShowLink,
+    SideBarUser,
   },
   props: ["users"],
 };

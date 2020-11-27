@@ -95,6 +95,10 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
+        DB::delete("DELETE FROM personals WHERE user_id = $id");
+        DB::delete("DELETE FROM companies WHERE user_id = $id");
+        DB::delete("DELETE FROM advertisements WHERE user_id = $id");
+        DB::delete("DELETE FROM messages WHERE user_id = $id");
         DB::delete("DELETE FROM users WHERE id = $id");
         return back();
     }
@@ -161,7 +165,7 @@ class AdminController extends Controller
      */
     public function showCompany($id)
     {
-        $company = Company::all()->where('user_id', $id);
+        $company = Company::all()->where('id', $id);
         $advertisements = Advertisement::all()->where('user_id', $id);
         // dd($company);
         return Inertia::render('Admin/showCompany', [
@@ -184,7 +188,7 @@ class AdminController extends Controller
     public function DeletePersonalPost($id)
     {
         DB::delete("DELETE FROM advertisements WHERE id = $id");
-        return redirect()->route('user.index');
+        return back();
     }
 
     public function personalDelete($id)
@@ -194,7 +198,7 @@ class AdminController extends Controller
         DB::delete("DELETE FROM personals WHERE user_id = $id");
         DB::delete("DELETE FROM users WHERE id = $id");
 
-        return redirect()->route('home.index');
+        return back();
     }
 
     public function companyDelete($id)
@@ -203,7 +207,7 @@ class AdminController extends Controller
         DB::delete("DELETE FROM advertisements WHERE company_id = $id");
         DB::delete("DELETE FROM companies WHERE user_id = $id");
         DB::delete("DELETE FROM users WHERE id = $id");
-        return redirect()->route('home.index');
+        return back();
     }
 
     public function contactAdmin(Request $request)

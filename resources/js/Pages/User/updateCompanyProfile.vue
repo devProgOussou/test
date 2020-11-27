@@ -1,8 +1,9 @@
 <template>
   <div>
+    <side-bar-user></side-bar-user>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 offset-2">
+        <div class="col-md-8 offset-4" style="margin-top: -28em">
           <br />
           <form @submit.prevent="handleSubmit">
             <div class="form-group mt-5">
@@ -10,37 +11,17 @@
             </div>
             <div class="form-group">
               <label for="prenom">Nom de l'entreprise :</label>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Nom de l'entreprise"
-                v-model="form.companyName"
-              />
+              <input type="text" class="form-control" placeholder="Nom de l'entreprise" v-model="form.companyName" />
             </div>
             <div class="form-group">
               <label for="prenom">Téléphone :</label>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Téléphone"
-                v-model="form.phone"
-              />
+              <input type="text" class="form-control" placeholder="Téléphone" v-model="form.phone" />
             </div>
             <div class="form-group">
               <label for="address">Adresse</label>
-              <input
-                type="text"
-                class="form-control"
-                placeholder="votre adresse"
-                v-model="form.address"
-              />
+              <input type="text" class="form-control" placeholder="votre adresse" v-model="form.address" />
             </div>
-            <button
-              type="submit"
-              class="btn btn-round btn-outline-primary col-md-5 offset-4"
-            >
-              Soumettre
-            </button>
+            <button type="submit" class="btn btn-round btn-outline-primary col-md-5 offset-4">Soumettre</button>
           </form>
         </div>
       </div>
@@ -49,6 +30,7 @@
 </template>
 
 <script>
+import SideBarUser from "../../Shared/SideBarUser";
 import AppLayout from "../../Shared/AppLayout";
 import FileInput from "../../Shared/FileInput";
 
@@ -57,6 +39,7 @@ export default {
   components: {
     AppLayout,
     FileInput,
+    SideBarUser,
   },
   props: {
     companiesProp: Array,
