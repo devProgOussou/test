@@ -53,6 +53,7 @@
                 </a>
                 @endif
 
+            @if(Auth::check())
             <ul class="dropdown-menu dropdown-menu-right" role="menu">
                 @if(Auth::check() && Auth::user()->isActive == true)
                 <a class="dropdown-item" href="{{ url('/home') }}">
@@ -83,6 +84,7 @@
                     Deconnexion
                 </a>
             </ul>
+            @endif
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                 @csrf
             </form>

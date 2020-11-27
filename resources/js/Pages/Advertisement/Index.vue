@@ -1,39 +1,24 @@
 <template>
   <div>
-    <div class="container">
-      <div class="row">
-        <div v-for="item in advertisements" :key="item.id" class="mt-5">
-          <div id="carouselExampleControls" class="card mr-4 carousel slide mt-5" style="width: 25rem; height: 18rem" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" alt="First slide" :src="'http://localhost:8000/uploads/' + item.images" style="width: 25rem; height: 18rem" />
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4" v-for="item in advertisements" :key="item.id">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" :src="'http://localhost:8000/uploads/' + item.images" alt="Card image cap" />
+              <div class="card-body">
+                <p>{{ item.productName }}</p>
+                <p class="card-text">{{ item.description }}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small style="float: left"
+                    >Posté par :
+                    <strong>
+                      {{ item.user.name }}
+                    </strong>
+                  </small>
+                  <small class="text-muted">9 mins</small>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="card mr-4">
-            <div class="card-body" style="width: 18rem">
-              <h5 class="card-title lead">{{ item.productName }}</h5>
-              <p class="card-text text-sm">
-                {{ item.description }}
-              </p>
-              <p>
-                <small
-                  >Posté par :
-                  <strong>
-                    {{ item.user.name }}
-                  </strong>
-                </small>
-                <br />
-                <small
-                  >Categorie :
-                  <strong>
-                    {{ item.category }}
-                  </strong>
-                </small>
-              </p>
-              <inertia-link :href="'post/' + item.id">
-                <button class="btn btn-info btn-md offset-6">Consulter</button>
-              </inertia-link>
             </div>
           </div>
         </div>
@@ -71,6 +56,16 @@ export default {
           .catch((error) => console.log(error));
       }
     },
+  },
+  mounted() {
+    let unix_timestamp = 1549312452;
+    var date = new Date(unix_timestamp * 1000);
+    var hours = date.getHours();
+    var minutes = "0" + date.getMinutes();
+    var seconds = "0" + date.getSeconds();
+    var formattedTime = hours + ":" + minutes.substr(-2) + ":" + seconds.substr(-2);
+
+    console.log(formattedTime);
   },
 };
 </script>
