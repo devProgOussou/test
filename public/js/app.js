@@ -50701,12 +50701,12 @@ var map = {
 	],
 	"./Admin/Index": [
 		"./resources/js/Pages/Admin/Index.vue",
-		0,
+		4,
 		11
 	],
 	"./Admin/Index.vue": [
 		"./resources/js/Pages/Admin/Index.vue",
-		0,
+		4,
 		11
 	],
 	"./Admin/PersonalShow": [
@@ -50751,11 +50751,13 @@ var map = {
 	],
 	"./Advertisement/Index": [
 		"./resources/js/Pages/Advertisement/Index.vue",
-		18
+		4,
+		3
 	],
 	"./Advertisement/Index.vue": [
 		"./resources/js/Pages/Advertisement/Index.vue",
-		18
+		4,
+		3
 	],
 	"./Advertisement/Post": [
 		"./resources/js/Pages/Advertisement/Post.vue",
@@ -50767,24 +50769,24 @@ var map = {
 	],
 	"./User/CompanyRegister": [
 		"./resources/js/Pages/User/CompanyRegister.vue",
-		0,
+		4,
 		1,
 		21
 	],
 	"./User/CompanyRegister.vue": [
 		"./resources/js/Pages/User/CompanyRegister.vue",
-		0,
+		4,
 		1,
 		21
 	],
 	"./User/Dashboard": [
 		"./resources/js/Pages/User/Dashboard.vue",
-		0,
+		4,
 		12
 	],
 	"./User/Dashboard.vue": [
 		"./resources/js/Pages/User/Dashboard.vue",
-		0,
+		4,
 		12
 	],
 	"./User/Deactivate": [
@@ -50797,24 +50799,24 @@ var map = {
 	],
 	"./User/Index": [
 		"./resources/js/Pages/User/Index.vue",
-		0,
+		4,
 		1,
 		23
 	],
 	"./User/Index.vue": [
 		"./resources/js/Pages/User/Index.vue",
-		0,
+		4,
 		1,
 		23
 	],
 	"./User/Message": [
 		"./resources/js/Pages/User/Message.vue",
-		0,
+		4,
 		13
 	],
 	"./User/Message.vue": [
 		"./resources/js/Pages/User/Message.vue",
-		0,
+		4,
 		13
 	],
 	"./User/MessageSave": [
@@ -50827,67 +50829,67 @@ var map = {
 	],
 	"./User/Messagerie": [
 		"./resources/js/Pages/User/Messagerie.vue",
-		0,
+		4,
 		15
 	],
 	"./User/Messagerie.vue": [
 		"./resources/js/Pages/User/Messagerie.vue",
-		0,
+		4,
 		15
 	],
 	"./User/Register": [
 		"./resources/js/Pages/User/Register.vue",
-		0,
+		4,
 		1,
 		22
 	],
 	"./User/Register.vue": [
 		"./resources/js/Pages/User/Register.vue",
-		0,
+		4,
 		1,
 		22
 	],
 	"./User/Show": [
 		"./resources/js/Pages/User/Show.vue",
-		0,
+		4,
 		14
 	],
 	"./User/Show.vue": [
 		"./resources/js/Pages/User/Show.vue",
-		0,
+		4,
 		14
 	],
 	"./User/displayMessage": [
 		"./resources/js/Pages/User/displayMessage.vue",
-		0,
+		4,
 		16
 	],
 	"./User/displayMessage.vue": [
 		"./resources/js/Pages/User/displayMessage.vue",
-		0,
+		4,
 		16
 	],
 	"./User/updateCompanyProfile": [
 		"./resources/js/Pages/User/updateCompanyProfile.vue",
-		0,
+		4,
 		1,
 		24
 	],
 	"./User/updateCompanyProfile.vue": [
 		"./resources/js/Pages/User/updateCompanyProfile.vue",
-		0,
+		4,
 		1,
 		24
 	],
 	"./User/updateUserProfile": [
 		"./resources/js/Pages/User/updateUserProfile.vue",
-		0,
+		4,
 		1,
 		25
 	],
 	"./User/updateUserProfile.vue": [
 		"./resources/js/Pages/User/updateUserProfile.vue",
-		0,
+		4,
 		1,
 		25
 	]

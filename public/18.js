@@ -38,6 +38,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   props: ["advertisements"],
@@ -99,14 +121,16 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
     _c("div", { staticClass: "album py-5 bg-light" }, [
       _c("div", { staticClass: "container" }, [
         _c(
           "div",
           { staticClass: "row" },
           _vm._l(_vm.advertisements, function(item) {
-            return _c("div", { key: item.id, staticClass: "col-md-4" }, [
-              _c("div", { staticClass: "card mb-4 box-shadow" }, [
+            return _c("div", { key: item.id, staticClass: "col-md-3" }, [
+              _c("div", { staticClass: "card mb-3 box-shadow" }, [
                 _c("img", {
                   staticClass: "card-img-top",
                   attrs: {
@@ -155,7 +179,96 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "carousel slide",
+        attrs: { id: "carouselExampleControls", "data-ride": "carousel" }
+      },
+      [
+        _c("div", { staticClass: "carousel-inner" }, [
+          _c("div", { staticClass: "carousel-item active" }, [
+            _c("img", {
+              staticClass: "d-block w-100",
+              attrs: {
+                src:
+                  "https://images.unsplash.com/photo-1549082969-62ab24fa9d7d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTN8fGRldmVsb3BlcnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                alt: "..."
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "carousel-item" }, [
+            _c("img", {
+              staticClass: "d-block w-100",
+              attrs: {
+                src:
+                  "https://images.unsplash.com/photo-1549082969-62ab24fa9d7d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTN8fGRldmVsb3BlcnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                alt: "..."
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "carousel-item" }, [
+            _c("img", {
+              staticClass: "d-block w-100",
+              attrs: {
+                src:
+                  "https://images.unsplash.com/photo-1549082969-62ab24fa9d7d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTN8fGRldmVsb3BlcnxlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60",
+                alt: "..."
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "carousel-control-prev",
+            attrs: {
+              href: "#carouselExampleControls",
+              role: "button",
+              "data-slide": "prev"
+            }
+          },
+          [
+            _c("span", {
+              staticClass: "carousel-control-prev-icon",
+              attrs: { "aria-hidden": "true" }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            staticClass: "carousel-control-next",
+            attrs: {
+              href: "#carouselExampleControls",
+              role: "button",
+              "data-slide": "next"
+            }
+          },
+          [
+            _c("span", {
+              staticClass: "carousel-control-next-icon",
+              attrs: { "aria-hidden": "true" }
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+          ]
+        )
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
