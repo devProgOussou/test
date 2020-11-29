@@ -66,7 +66,7 @@
                 <a class="dropdown-item" href="{{ url('/message') }}">
                     Messagerie
                 </a>
-                @if(Auth::check() && Auth::user()->isRegister == true)
+                @if(Auth::check())
                 <a class="dropdown-item" href="{{ url('/updateUserProfile/'.Auth::user()->id) }}">
                     Modifier profil
                 </a>
