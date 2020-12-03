@@ -59,7 +59,7 @@
               <img class="card-img-top" :src="'http://localhost:8000/uploads/' + item.images" alt="Card image cap" />
               <div class="card-body">
                 <p>{{ item.productName }}</p>
-                <p class="card-text">{{ item.description }}</p>
+                <p class="card-text">{{ item.description | truncate(27) }}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <small style="float: left"
                     >Posté par :
@@ -67,7 +67,9 @@
                       {{ item.user.name }}
                     </strong>
                   </small>
-                  <small class="text-muted">9 mins</small>
+                  <small class="text-muted">
+                    <inertia-link :href="'http://localhost:8000/post/' + item.id">Afficher</inertia-link>
+                  </small>
                 </div>
               </div>
             </div>
@@ -91,6 +93,7 @@ export default {
   data() {
     return {
       q: null,
+      createdAt: null,
     };
   },
   methods: {
@@ -109,7 +112,7 @@ export default {
     },
   },
   mounted() {
-    let unix_timestamp = 1549312452;
+    let unix_timestamp = 1606736184;
     var date = new Date(unix_timestamp * 1000);
     var hours = date.getHours();
     var minutes = "0" + date.getMinutes();
@@ -120,12 +123,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.hm-gradient {
-  background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
-}
-.darken-grey-text {
-  color: #2e2e2e;
-}
-</style>

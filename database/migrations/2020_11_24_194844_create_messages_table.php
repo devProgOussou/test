@@ -19,7 +19,7 @@ class CreateMessagesTable extends Migration
             $table->bigInteger('receiver_id')->nullable();
             $table->text('message');
             $table->foreignId('user_id')->constrained();
-            $table->timestamps();
+            $table->timestamp();
         });
     }
 

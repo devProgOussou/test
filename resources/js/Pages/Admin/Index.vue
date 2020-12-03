@@ -30,16 +30,16 @@
               <td v-if="user.isActive == 1">Actif</td>
               <td v-else>Inactif</td>
               <td>
-                <inertia-link :href="'user/' + user.id">
+                <inertia-link :href="'http://alpha-tests.defarsci.com/samba-store-v2/public/user/' + user.id">
                   <button class="btn btn-info btn-sm">Afficher</button>
                 </inertia-link>
-                <inertia-link :href="'userDeactivate/' + user.id" v-if="user.isActive == true">
+                <inertia-link :href="'http://alpha-tests.defarsci.com/samba-store-v2/public/userDeactivate/' + user.id" v-if="user.isActive == true">
                   <button class="btn btn-warning btn-round btn-sm">Desactiver</button>
                 </inertia-link>
-                <inertia-link :href="'userActivate/' + user.id" v-if="user.isActive == false">
+                <inertia-link :href="'http://alpha-tests.defarsci.com/samba-store-v2/public/userActivate/' + user.id" v-if="user.isActive == false">
                   <button class="btn btn-success btn-round btn-sm">Activer</button>
                 </inertia-link>
-                <inertia-link :href="'userDelete/' + user.id">
+                <inertia-link :href="'http://alpha-tests.defarsci.com/samba-store-v2/public/userDelete/' + user.id">
                   <button class="btn btn-round btn-danger btn-sm">Supprimer</button>
                 </inertia-link>
               </td>

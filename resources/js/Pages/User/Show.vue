@@ -3,10 +3,10 @@
     <side-bar-user></side-bar-user>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 offset-4" style="margin-top: -29em">
+        <div class="col-md-8 offset-1" style="margin-top: -7rem">
           <br /><br />
           <div class="card offset-3" style="width: 40rem" v-for="item in advertisement" :key="item.id">
-            <img class="card-img-top" style="height: 200px; width: 40rem" :src="'http://alpha-tests.defarsci.com/samba-store-v2/uploads/' + item.images" alt="Card image cap" />
+            <img class="card-img-top" style="height: 200px; width: 40rem" :src="'http://localhost:8000/uploads/' + item.images" alt="Card image cap" />
             <div class="card-body">
               <h5 class="card-title">{{ item.productName }}</h5>
               <p class="card-text">

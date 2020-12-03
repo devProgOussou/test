@@ -1,31 +1,57 @@
 <template>
   <div>
     <side-bar-user></side-bar-user>
+    <FlashMessage :position="'right top'"></FlashMessage>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 offset-4" style="margin-top: -29em">
+        <div class="col-md-8 offset-4" style="margin-top: -7rem">
           <br />
           <form @submit.prevent="handleSubmit">
-            <div class="form-group mt-5">
+            <div class="form-group">
               <file-input v-model="form.avatar" label="avatar" />
             </div>
             <div class="form-group">
               <label for="lastName">nom : </label>
-              <input type="text" class="form-control" :placeholder="this.personalsProp[0].lastName" v-model="form.lastName" />
+              <input
+                type="text"
+                class="form-control"
+                :placeholder="this.personalsProp[0].lastName"
+                v-model="form.lastName"
+              />
             </div>
             <div class="form-group">
               <label for="prenom">Prenom : </label>
-              <input type="text" class="form-control" :placeholder="this.personalsProp[0].firstName" v-model="form.firstName" />
+              <input
+                type="text"
+                class="form-control"
+                :placeholder="this.personalsProp[0].firstName"
+                v-model="form.firstName"
+              />
             </div>
             <div class="form-group">
               <label for="prenom">Téléphone :</label>
-              <input type="text" class="form-control" :placeholder="this.personalsProp[0].phone" v-model="form.phone" />
+              <input
+                type="text"
+                class="form-control"
+                :placeholder="this.personalsProp[0].phone"
+                v-model="form.phone"
+              />
             </div>
             <div class="form-group">
               <label for="address">Adresse</label>
-              <input type="text" class="form-control" :placeholder="this.personalsProp[0].address" v-model="form.address" />
+              <input
+                type="text"
+                class="form-control"
+                :placeholder="this.personalsProp[0].address"
+                v-model="form.address"
+              />
             </div>
-            <button type="submit" class="btn btn-round btn-outline-primary col-md-5 offset-4">Soumettre</button>
+            <button
+              type="submit"
+              class="btn btn-round btn-outline-primary col-md-5 offset-4"
+            >
+              Soumettre
+            </button>
           </form>
         </div>
       </div>
@@ -71,11 +97,17 @@ export default {
       data.append("address", this.form.address || "");
       data.append("avatar", this.form.avatar || "");
 
-      this.$inertia.post(`/updateUserProfile/${this.id}`, data, {
-        onSuccess: () => {
-          console.log("Send Success");
-        },
-      });
+      this.$inertia.post(
+        `http://localhost:8000/updateUserProfile/${this.id}`,
+        data,
+        {
+          onSuccess: () => {
+            this.flashMessage.info({
+              message: "Votre profil a ete modifier avec succes!",
+            });
+          },
+        }
+      );
     },
   },
   mounted: function () {

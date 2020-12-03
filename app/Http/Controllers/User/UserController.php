@@ -75,9 +75,11 @@ class UserController extends Controller
         }
         else {
             $companies = Company::where('user_id', $id)->get();
+            $users = User::where('id', $id)->get();
 
             return Inertia::render('User/updateCompanyProfile',[
-                'companies-prop' => $companies
+                'companies-prop' => $companies,
+                'users-prop' => $users
             ]);
         }
 
@@ -135,16 +137,18 @@ class UserController extends Controller
             'phone' => $request->input('phone'),
         ]);
 
+        User::where('id', $id)->update([
+            'name' => $request->input('companyName'),
+        ]);
+
         $user = new User();
         if (Auth::user()->id == $id && $request->hasFile('avatar')) {
             $file = $request->file('avatar');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            DB::table('users')
-                    ->where('id', Auth::user()->id)
+            User::where('id', Auth::user()->id)
                     ->update([
-                        'avatar' => $filename,
-
+                        'avatar' => $filename
                         ]);
             $file->move('uploads/avatar/', $filename);
         }

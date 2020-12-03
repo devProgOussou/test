@@ -1,9 +1,10 @@
 <template>
   <div>
     <side-bar-user></side-bar-user>
+    <FlashMessage :position="'right top'"></FlashMessage>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 offset-4" style="margin-top: -28em">
+        <div class="col-md-8 offset-4" style="margin-top: -7rem">
           <form @submit.prevent="handleSubmit">
             <div class="form-group">
               <label for="type">categorie</label>
@@ -64,6 +65,7 @@ export default {
     handleSubmit() {
       this.sending = true;
       var data = new FormData();
+
       data.append("productName", this.form.productName || "");
       data.append("description", this.form.description || "");
       data.append("image", this.form.image || "");
@@ -71,10 +73,13 @@ export default {
       data.append("image1", this.form.image1 || "");
       data.append("image2", this.form.image2 || "");
 
-      this.$inertia.post("/userPost", data, {
+      this.$inertia.post("http://localhost:8000/userPost", data, {
         onSuccess: () => {
           this.sending = false;
-          console.log("Send Success");
+          this.flashMessage.info({
+            message: "Votre annonce a ete poste avec success!",
+            time: 5000,
+          });
         },
       });
     },

@@ -26,11 +26,11 @@
               <td>{{ company.phone }}</td>
               <td></td>
               <td>
-                <inertia-link :href="'company/' + company.id">
+                <inertia-link :href="'http://alpha-tests.defarsci.com/samba-store-v2/public/company/' + company.id">
                   <button class="btn btn-info btn-sm">Afficher</button>
                 </inertia-link>
 
-                <inertia-link :href="'companyDelete/' + company.id">
+                <inertia-link :href="'http://alpha-tests.defarsci.com/samba-store-v2/public/companyDelete/' + company.id">
                   <button class="btn btn-round btn-danger btn-sm">Supprimer</button>
                 </inertia-link>
               </td>

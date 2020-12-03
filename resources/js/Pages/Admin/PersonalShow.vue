@@ -28,11 +28,11 @@
               <td>{{ personal.phone }}</td>
               <td></td>
               <td>
-                <inertia-link :href="'personal/' + personal.user_id">
+                <inertia-link :href="'http://alpha-tests.defarsci.com/samba-store-v2/public/personal/' + personal.user_id">
                   <button class="btn btn-info btn-sm">Afficher</button>
                 </inertia-link>
 
-                <inertia-link :href="'personalDelete/' + personal.user_id">
+                <inertia-link :href="'http://alpha-tests.defarsci.com/samba-store-v2/public/personalDelete/' + personal.user_id">
                   <button class="btn btn-round btn-danger btn-sm">Supprimer le compte</button>
                 </inertia-link>
               </td>

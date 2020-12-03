@@ -26,6 +26,9 @@
     "dependencies": {
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
         "@inertiajs/inertia": "^0.6.3",
-        "@inertiajs/inertia-vue": "^0.4.2"
+        "@inertiajs/inertia-vue": "^0.4.2",
+        "@smartweb/vue-flash-message": "^0.6.10",
+        "laravel-mix-filesystem-deployment": "^1.0.0",
+        "vue-truncate-filter": "^1.1.7"
     }
 }

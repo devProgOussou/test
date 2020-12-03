@@ -1,9 +1,10 @@
 <template>
   <div>
     <side-bar-user></side-bar-user>
+    <FlashMessage :position="'right top'"></FlashMessage>
     <div class="container">
       <div class="row">
-        <div class="col-md-8 offset-4" style="margin-top: -28em">
+        <div class="col-md-8 offset-3" style="margin-top: -7rem">
           <br />
           <form @submit.prevent="handleSubmit">
             <div class="form-group mt-5">
@@ -21,7 +22,7 @@
               <label for="address">Adresse</label>
               <input type="text" class="form-control" placeholder="votre adresse" v-model="form.address" />
             </div>
-            <button type="submit" class="btn btn-round btn-outline-primary col-md-5 offset-4">Soumettre</button>
+            <button type="submit" class="btn btn-round btn-outline-primary col-md-5 offset-4 mb-5">Soumettre</button>
           </form>
         </div>
       </div>
@@ -39,6 +40,7 @@ export default {
     FileInput,
     SideBarUser,
   },
+
   props: {
     companiesProp: Array,
   },
@@ -59,15 +61,18 @@ export default {
     handleSubmit() {
       this.sending = true;
       var data = new FormData();
+      var baseUrl = ""
 
       data.append("companyName", this.form.companyName || "");
       data.append("phone", this.form.phone || "");
       data.append("address", this.form.address || "");
       data.append("avatar", this.form.avatar || "");
 
-      this.$inertia.post(`/updateCompanyProfile/${this.id}`, data, {
+      this.$inertia.post(`http://localhost:8000/updateCompanyProfile/${this.id}`, data, {
         onSuccess: () => {
-          console.log("Send Success");
+          this.flashMessage.info({
+            message: "Votre profil a ete modifier avec success!",
+          });
         },
       });
     },

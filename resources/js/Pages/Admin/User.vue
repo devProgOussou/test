@@ -28,18 +28,18 @@
               <td>{{ item.category }}</td>
               <td>{{ item.description }}</td>
               <td>
-                <img :src="'http://localhost:8000/uploads/' + item.images" style="height: 100px; width: 200px" />
+                <img :src="'http://alpha-tests.defarsci.com/samba-store-v2/public/uploads/' + item.images" style="height: 100px; width: 200px" />
               </td>
               <td v-if="item.images1 != null">
-                <img :src="'http://localhost:8000/uploads/' + item.images1" style="height: 100px; width: 200px" />
+                <img :src="'http://alpha-tests.defarsci.com/samba-store-v2/public/uploads/' + item.images1" style="height: 100px; width: 200px" />
               </td>
               <td v-else>Null</td>
               <td v-if="item.images2 != null">
-                <img :src="'http://localhost:8000/uploads/' + item.images2" style="height: 100px; width: 200px" />
+                <img :src="'http://alpha-tests.defarsci.com/samba-store-v2/public/uploads/' + item.images2" style="height: 100px; width: 200px" />
               </td>
               <td v-else>Null</td>
               <td>
-                <inertia-link :href="'http://localhost:8000/DeletePersonalPost/' + item.id">
+                <inertia-link :href="'http://alpha-tests.defarsci.com/samba-store-v2/public/DeletePersonalPost/' + item.id">
                   <button class="btn btn-round btn-danger btn-sm">Supprimer</button>
                 </inertia-link>
               </td>
